@@ -5,7 +5,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
-  -p 80:80 \
+  -p 8096:80 \
   -p 443:443 \
   -v /heimdall:/config \
   --restart unless-stopped \
