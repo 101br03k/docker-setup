@@ -1,6 +1,7 @@
 cd /
 sudo mkdir heimdall-traefik
-docker run -d --name=heimdall_treafik \    
+docker run -d \
+  --name=heimdall_treafik \    
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
