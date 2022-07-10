@@ -1,7 +1,7 @@
 cd /
 sudo mkdir heimdall-traefik
 docker run -d \
-  --name=heimdall_treafik \    
+  --name=heimdall2 \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
@@ -10,3 +10,4 @@ docker run -d \
   -v /heimdall-traefik:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/heimdall:latest
+
