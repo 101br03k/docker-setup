@@ -1,5 +1,3 @@
-cd /
-sudo mkdir heimdall
 docker run -d \
   --name=heimdall \
   -e PUID=1000 \
