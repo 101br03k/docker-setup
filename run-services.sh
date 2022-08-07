@@ -40,14 +40,14 @@ if [ "$service" = "3" ]
 then
   docker volume create portainer_data
   docker run -d -p 8000:8000 -p 9443:9443 --name portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
-  echo"portainer has been deployed at <serverip>:9443"
+  echo"portainer has been deployed at <server-ip>:9443"
 fi
 
 if [ "$service" = "4" ]
 then
   cd dashdot || exit
   docker-compose up -d
-  echo"dashdot has been deployed at <serverip>:3003"
+  echo"dashdot has been deployed at <server-ip>:3003"
 fi
 
 if [ "$service" = "5" ]
@@ -64,7 +64,7 @@ then
   sudo mkdir /heimdall
   docker-compose up -d
   cd ..
-  echo"heimdall has been deployed at <serverip>:8096"
+  echo"heimdall has been deployed at <server-ip>:8096"
 fi
 
 if [ "$service" = "6" ]
@@ -73,7 +73,7 @@ then
   sudo mkdir /heimdall-traefik
   docker-compose up -d
   cd ..
-  echo"heimdall-traefik has been deployed at <serverip>:8097"
+  echo"heimdall-traefik has been deployed at <server-ip>:8097"
 fi
 
 if [ "$service" = "8" ]
@@ -85,7 +85,7 @@ then
       cd wetty || exit
       docker-compose up -d
       cd ..
-      echo"wetty has been deployed at <serverip>:3000"
+      echo"wetty has been deployed at <server-ip>:3000"
     else
       echo"please change the user and ip in wetty/docker-compose.yml"
       exit
@@ -97,7 +97,7 @@ then
   cd uptime-kuma || exit
   docker-compose up -d
   cd ..
-  echo"uptime-kuma has been deployed at <serverip>:3001"
+  echo"uptime-kuma has been deployed at <server-ip>:3001"
 fi
 
 if [ "$service" = "10" ]
@@ -105,7 +105,7 @@ then
   cd pi-hole || exit
   docker-compose up -d
   cd ..
-  echo"pi-hole has been deployed at <serverip>/admin/."
+  echo"pi-hole has been deployed at <server-ip>/admin/."
 fi
 
 if [ "$service" = "11" ]
@@ -118,7 +118,7 @@ echo"did you change the volumes filebrowser/docker-compose.yml? [y/n]?"
     cd filebrowser || exit
     docker-compose up -d
     cd ..
-    echo"pi-hole has been deployed at <serverip>:4431"
+    echo"pi-hole has been deployed at <server-ip>:4431"
   else
     echo"please change volumes in filebrowser/docker-compose.yml"
     exit
@@ -129,7 +129,7 @@ if [ "$service" = "15" ]
 then
   sudo apt install cockpit
   docker ps
-  echo "cockpit has been deployed at <serverip>:9090"
+  echo "cockpit has been deployed at <server-ip>:9090"
 fi
 
 ./run-services.sh
