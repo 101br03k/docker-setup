@@ -12,5 +12,5 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 3005:3000
+      - 3000:3000
     restart: unless-stopped
