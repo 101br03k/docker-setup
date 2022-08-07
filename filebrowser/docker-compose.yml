@@ -1,0 +1,12 @@
+version: "3"
+services:
+  filebrowser:
+    image: hurlenko/filebrowser
+    ports:
+      - 4431:8080
+    volumes:
+      - /media/ssd/:/data
+      - /filebrowser:/config
+    environment:
+      - FB_BASEURL=/filebrowser
+    restart: unless-stopped
