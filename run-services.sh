@@ -10,6 +10,7 @@ echo"7) heimdall traefik"
 echo"8) wetty"
 echo"9) uptime-kuma"
 echo"10) pi-hole"
+echo"11) filebrowser"
 
 echo"15) cockpit"
 
@@ -99,7 +100,7 @@ then
   echo"uptime-kuma has been deployed at <serverip>:3001"
 fi
 
-if [ "$service" = "41" ]
+if [ "$service" = "10" ]
 then
   cd pi-hole || exit
   docker-compose up -d
@@ -107,7 +108,22 @@ then
   echo"pi-hole has been deployed at <serverip>/admin/"
 fi
 
-
+if [ "$service" = "11" ]
+then
+echo"did you change the volumes filebrowser/docker-compose.yml? [y/n]?"
+  read filebrowser
+  if [ "$filebrowser" = "y" ]
+  then
+    sudo mkdir /filebrowser
+    cd filebrowser || exit
+    docker-compose up -d
+    cd ..
+    echo"pi-hole has been deployed at <serverip>:4431"
+  else
+    echo"please change volumes in filebrowser/docker-compose.yml"
+    exit
+  fi
+fi
 
 if [ "$service" = "15" ]
 then
