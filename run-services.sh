@@ -9,6 +9,7 @@ echo"6) heimdall"
 echo"7) heimdall traefik"
 echo"8) wetty"
 echo"9) uptime-kuma"
+echo"10) pi-hole"
 
 echo"15) cockpit"
 
@@ -38,14 +39,14 @@ if [ "$service" = "3" ]
 then
   docker volume create portainer_data
   docker run -d -p 8000:8000 -p 9443:9443 --name portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
-  echo"portainer has been deployed on port 9443 of your ip"
+  echo"portainer has been deployed at <serverip>:9443"
 fi
 
 if [ "$service" = "4" ]
 then
   cd dashdot || exit
   docker-compose up -d
-  echo"dashdot has been deployed on port 3003 of your ip"
+  echo"dashdot has been deployed at <serverip>:3003"
 fi
 
 if [ "$service" = "5" ]
@@ -62,7 +63,7 @@ then
   sudo mkdir /heimdall
   docker-compose up -d
   cd ..
-  echo"heimdall has been deployed on port 8096 of your ip"
+  echo"heimdall has been deployed at <serverip>:8096"
 fi
 
 if [ "$service" = "6" ]
@@ -71,7 +72,7 @@ then
   sudo mkdir /heimdall-traefik
   docker-compose up -d
   cd ..
-  echo"heimdall-traefik has been deployed on port 8097 of your ip"
+  echo"heimdall-traefik has been deployed at <serverip>:8097"
 fi
 
 if [ "$service" = "8" ]
@@ -83,7 +84,7 @@ then
       cd wetty || exit
       docker-compose up -d
       cd ..
-      echo"wetty has been deployed on port 3000 of your ip"
+      echo"wetty has been deployed at <serverip>:3000"
     else
       echo"please change the user and ip in wetty/docker-compose.yml"
       exit
@@ -95,10 +96,16 @@ then
   cd uptime-kuma || exit
   docker-compose up -d
   cd ..
-  echo"uptime-kuma has been deployed on port 3001 of your ip"
+  echo"uptime-kuma has been deployed at <serverip>:3001"
 fi
 
-
+if [ "$service" = "41" ]
+then
+  cd pi-hole || exit
+  docker-compose up -d
+  cd ..
+  echo"pi-hole has been deployed at <serverip>/admin/"
+fi
 
 
 
@@ -106,7 +113,7 @@ if [ "$service" = "15" ]
 then
   sudo apt install cockpit
   docker ps
-  echo "cockpit has been deployed on port 9090 of your ip"
+  echo "cockpit has been deployed at <serverip>:9090"
 fi
 
 ./run-services.sh
