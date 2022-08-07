@@ -6,8 +6,12 @@ echo"3) portainer"
 echo"4) dash. / dashdot"
 echo"5) watchtower"
 echo"6) heimdall"
-echo"7) wetty"
-echo"8) uptime-kuma"
+echo"7) heimdall traefik"
+echo"8) wetty"
+echo"9) uptime-kuma"
+
+echo"15) cockpit"
+
 echo"please type the number of the service you want to run"
 read service
 
@@ -34,14 +38,14 @@ if [ "$service" = "3" ]
 then
   docker volume create portainer_data
   docker run -d -p 8000:8000 -p 9443:9443 --name portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
-  echo"portainer has been deployed port 9443"
+  echo"portainer has been deployed on port 9443 of your ip"
 fi
 
 if [ "$service" = "4" ]
 then
   cd dashdot || exit
   docker-compose up -d
-  echo"dashdot has been deployed port 3003"
+  echo"dashdot has been deployed on port 3003 of your ip"
 fi
 
 if [ "$service" = "5" ]
@@ -58,10 +62,19 @@ then
   sudo mkdir /heimdall
   docker-compose up -d
   cd ..
-  echo"heimdall has been deployed port 8096"
+  echo"heimdall has been deployed on port 8096 of your ip"
 fi
 
-if [ "$service" = "7" ]
+if [ "$service" = "6" ]
+then
+  cd heimdall-traefik || exit
+  sudo mkdir /heimdall-traefik
+  docker-compose up -d
+  cd ..
+  echo"heimdall-traefik has been deployed on port 8097 of your ip"
+fi
+
+if [ "$service" = "8" ]
 then
   echo"did you change the user and ip in wetty/docker-compose.yml? [y/n]?"
   read wetty
@@ -70,19 +83,30 @@ then
       cd wetty || exit
       docker-compose up -d
       cd ..
-      echo"wetty has been deployed port 3000"
+      echo"wetty has been deployed on port 3000 of your ip"
     else
       echo"please change the user and ip in wetty/docker-compose.yml"
       exit
     fi
 fi
 
-if [ "$service" = "8" ]
+if [ "$service" = "9" ]
 then
   cd uptime-kuma || exit
   docker-compose up -d
   cd ..
-  echo"uptime-kuma has been deployed port 3001"
+  echo"uptime-kuma has been deployed on port 3001 of your ip"
+fi
+
+
+
+
+
+if [ "$service" = "15" ]
+then
+  sudo apt install cockpit
+  docker ps
+  echo "cockpit has been deployed on port 9090 of your ip"
 fi
 
 ./run-services.sh
