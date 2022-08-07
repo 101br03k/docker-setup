@@ -105,7 +105,7 @@ then
   cd pi-hole || exit
   docker-compose up -d
   cd ..
-  echo"pi-hole has been deployed at <serverip>/admin/"
+  echo"pi-hole has been deployed at <serverip>/admin/."
 fi
 
 if [ "$service" = "11" ]
