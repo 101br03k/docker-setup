@@ -2,6 +2,7 @@ version: '3.5'
 
 services:
   dash:
+    container_name: dashdot
     environment:
      DASHDOT_ENABLE_STORAGE_SPLIT_VIEW: 'true'
      DASHDOT_ALWAYS_SHOW_PERCENTAGES: 'true'
