@@ -1,4 +1,10 @@
-#!/bin/bash
-sudo docker volume create uptime-kuma
-sudo docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1
-docker ps
+version: '3.3'
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes:
+      - ./uptime-kuma-data:/app/data
+    ports:
+      - 3001:3001  # <Host Port>:<Container Port>
+    restart: always
