@@ -8,7 +8,7 @@ services:
       - "53:53/udp"
       - "67:67/udp"
       - "80:80/tcp"
-      - "443:443/tcp"
+      - "444:443/tcp"
     environment:
       TZ: 'TZ=Europe/Amsterdam' #this is the time zone
     volumes:
