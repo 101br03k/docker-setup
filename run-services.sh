@@ -11,6 +11,7 @@ echo"8) wetty"
 echo"9) uptime-kuma"
 echo"10) pi-hole"
 echo"11) filebrowser"
+echo"12) fresh-rss"
 
 echo"15) cockpit"
 
@@ -123,6 +124,15 @@ echo"did you change the volumes filebrowser/docker-compose.yml? [y/n]?"
     echo"please change volumes in filebrowser/docker-compose.yml"
     exit
   fi
+fi
+
+if [ "$service" = "12" ]
+then
+  sudo mkdir /fresh-rrs
+  cd fress-rss || exit
+  docker-compose up -d
+  cd ..
+  echo "freshRSS has been deployed at <server-ip>:808"
 fi
 
 if [ "$service" = "15" ]
