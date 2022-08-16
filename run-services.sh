@@ -15,12 +15,12 @@ echo "12) fresh-rss"
 
 echo "15) cockpit"
 
-echo"please type the number of the service you want to run"
+echo "please type the number of the service you want to run"
 read service
 
 if [ "$service" = "1" ]
 then
-  echo"exit with reboot? [y/n]?"
+  echo "exit with reboot? [y/n]?"
 read reboot
         if [ "$reboot" = "y" ]
         then
@@ -34,21 +34,21 @@ if [ "$service" = "2" ]
 then
   curl -sSL https://get.docker.com | sh
   sudo usermod -aG docker pi
-  echo"docker has been installed"
+  echo "docker has been installed"
 fi
 
 if [ "$service" = "3" ]
 then
   docker volume create portainer_data
   docker run -d -p 8000:8000 -p 9443:9443 --name portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
-  echo"portainer has been deployed at <server-ip>:9443"
+  echo "portainer has been deployed at <server-ip>:9443"
 fi
 
 if [ "$service" = "4" ]
 then
   cd dashdot || exit
   docker-compose up -d
-  echo"dashdot has been deployed at <server-ip>:3003"
+  echo "dashdot has been deployed at <server-ip>:3003"
 fi
 
 if [ "$service" = "5" ]
@@ -56,7 +56,7 @@ then
   cd watchtower || exit
   docker-compose up -d
   cd ..
-  echo"watchtower has been deployed"
+  echo "watchtower has been deployed"
 fi
 
 if [ "$service" = "6" ]
@@ -65,7 +65,7 @@ then
   sudo mkdir /heimdall
   docker-compose up -d
   cd ..
-  echo"heimdall has been deployed at <server-ip>:8096"
+  echo "heimdall has been deployed at <server-ip>:8096"
 fi
 
 if [ "$service" = "6" ]
@@ -74,21 +74,21 @@ then
   sudo mkdir /heimdall-traefik
   docker-compose up -d
   cd ..
-  echo"heimdall-traefik has been deployed at <server-ip>:8097"
+  echo "heimdall-traefik has been deployed at <server-ip>:8097"
 fi
 
 if [ "$service" = "8" ]
 then
-  echo"did you change the user and ip in wetty/docker-compose.yml? [y/n]?"
+  echo "did you change the user and ip in wetty/docker-compose.yml? [y/n]?"
   read wetty
     if [ "$wetty" = "y" ]
     then
       cd wetty || exit
       docker-compose up -d
       cd ..
-      echo"wetty has been deployed at <server-ip>:3000"
+      echo "wetty has been deployed at <server-ip>:3000"
     else
-      echo"please change the user and ip in wetty/docker-compose.yml"
+      echo "please change the user and ip in wetty/docker-compose.yml"
       exit
     fi
 fi
@@ -98,7 +98,7 @@ then
   cd uptime-kuma || exit
   docker-compose up -d
   cd ..
-  echo"uptime-kuma has been deployed at <server-ip>:3001"
+  echo "uptime-kuma has been deployed at <server-ip>:3001"
 fi
 
 if [ "$service" = "10" ]
@@ -106,12 +106,12 @@ then
   cd pi-hole || exit
   docker-compose up -d
   cd ..
-  echo"pi-hole has been deployed at <server-ip>/admin/."
+  echo "pi-hole has been deployed at <server-ip>/admin/."
 fi
 
 if [ "$service" = "11" ]
 then
-echo"did you change the volumes filebrowser/docker-compose.yml? [y/n]?"
+echo "did you change the volumes filebrowser/docker-compose.yml? [y/n]?"
   read filebrowser
   if [ "$filebrowser" = "y" ]
   then
@@ -121,7 +121,7 @@ echo"did you change the volumes filebrowser/docker-compose.yml? [y/n]?"
     cd ..
     echo"pi-hole has been deployed at <server-ip>:4431"
   else
-    echo"please change volumes in filebrowser/docker-compose.yml"
+    echo "please change volumes in filebrowser/docker-compose.yml"
     exit
   fi
 fi
