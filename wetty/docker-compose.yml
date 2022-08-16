@@ -1,16 +1,8 @@
----
-version:  "2.1"
 services:
   wetty:
-    image: svenihoney/wetty:latest
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - REMOTE_SSH_USER=adm-aw
-      - REMOTE_SSH_SERVER=192.168.0.20 #change to your server
-      - REMOTE_SSH_PORT=22 #change to your ssh port
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
+    command:
+    - --ssh-host=192.168.0.20
+    image: wettyoss/wetty
     ports:
-      - 3000:3000
-    restart: unless-stopped
+    - 3000:3000
+version: '3'
