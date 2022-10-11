@@ -12,8 +12,10 @@ echo "9) uptime-kuma"
 echo "10) pi-hole"
 echo "11) filebrowser"
 echo "12) fresh-rss"
+echo "13) magic-mirror"
 
-echo "15) cockpit"
+
+echo "220) cockpit"
 
 echo "please type the number of the service you want to run"
 read service
@@ -135,7 +137,16 @@ then
   echo "freshRSS has been deployed at <server-ip>:808"
 fi
 
-if [ "$service" = "15" ]
+if [ "$service" = "13" ]
+then
+  sudo mkdir /magic-mirror
+  cd magic-mirror || exit
+  docker-compose up -d
+  cd ..
+  echo "freshRSS has been deployed at <server-ip>:808"
+fi
+
+if [ "$service" = "220" ]
 then
   sudo apt install cockpit
   docker ps
