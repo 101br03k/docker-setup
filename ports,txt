@@ -1,1 +1,36 @@
+Portainer
+  8000:8000
+  9443:9443
 
+Dashdot
+  3003:3003
+
+Heimdall
+  8096:80
+  443:443
+
+Heimdall-Traefik
+  8097:80
+  444:443
+
+Wetty
+  3000:3000
+
+Uptime-Kuma
+  3001:3001
+
+Pi-Hole
+  "53:53/tcp"
+  "53:53/udp"
+  "67:67/udp"
+  "80:80/tcp"
+  "445:443/tcp"
+
+Filebrowser
+  4431:8080
+
+Fresh-rss
+  80:808
+
+Magic-Mirror
+  8070:8080
