@@ -14,6 +14,7 @@ echo "11) filebrowser"
 echo "12) fresh-rss"
 echo "13) magic-mirror"
 
+echo "100) ports"
 
 echo "220) cockpit"
 
@@ -143,7 +144,7 @@ then
   cd magic-mirror || exit
   docker-compose up -d
   cd ..
-  echo "freshRSS has been deployed at <server-ip>:808"
+  echo "magic-mirror has been deployed at <server-ip>:808"
 fi
 
 if [ "$service" = "220" ]
@@ -151,6 +152,11 @@ then
   sudo apt install cockpit
   docker ps
   echo "cockpit has been deployed at <server-ip>:9090"
+fi
+
+if [ "$service" = "100" ]
+then
+  more ports.txt
 fi
 
 ./run-services.sh
