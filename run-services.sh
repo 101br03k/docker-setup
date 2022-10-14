@@ -12,7 +12,7 @@ echo "9) uptime-kuma"
 echo "10) pi-hole"
 echo "11) filebrowser"
 echo "12) fresh-rss"
-echo "13) magic-mirror"
+echo "13) "
 
 echo "100) ports"
 
