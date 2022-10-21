@@ -1,4 +1,6 @@
 #!/bin/bash
+pwd=$(pwd)
+
 echo "what service do you want to run"
 echo "1) exit script"
 echo "2) docker"
@@ -49,34 +51,25 @@ fi
 
 if [ "$service" = "4" ]
 then
-  cd dashdot || exit
-  docker-compose up -d
+  docker-compose -f "$pwd/dashdot/docker-compose.yml" up -d
   echo "dashdot has been deployed at <server-ip>:3003"
 fi
 
 if [ "$service" = "5" ]
 then
-  cd watchtower || exit
-  docker-compose up -d
-  cd ..
+  docker-compose -f "$pwd/watchtower/docker-compose.yml" up -d
   echo "watchtower has been deployed"
 fi
 
 if [ "$service" = "6" ]
 then
-  cd heimdall || exit
-  sudo mkdir /heimdall
-  docker-compose up -d
-  cd ..
+  docker-compose -f "$pwd/heimdall/docker-compose.yml" up -d
   echo "heimdall has been deployed at <server-ip>:8096"
 fi
 
 if [ "$service" = "6" ]
 then
-  cd heimdall-traefik || exit
-  sudo mkdir /heimdall-traefik
-  docker-compose up -d
-  cd ..
+  docker-compose -f "$pwd/heimdall-traefik/docker-compose.yml" up -d
   echo "heimdall-traefik has been deployed at <server-ip>:8097"
 fi
 
@@ -86,9 +79,7 @@ then
   read wetty
     if [ "$wetty" = "y" ]
     then
-      cd wetty || exit
-      docker-compose up -d
-      cd ..
+      docker-compose -f "$pwd/wetty/docker-compose.yml" up -d
       echo "wetty has been deployed at <server-ip>:3000"
     else
       echo "please change the user and ip in wetty/docker-compose.yml"
@@ -98,30 +89,23 @@ fi
 
 if [ "$service" = "9" ]
 then
-  cd uptime-kuma || exit
-  docker-compose up -d
-  cd ..
+  docker-compose -f "$pwd/uptime-kuma/docker-compose.yml" up -d
   echo "uptime-kuma has been deployed at <server-ip>:3001"
 fi
 
 if [ "$service" = "10" ]
 then
-  cd pi-hole || exit
-  docker-compose up -d
-  cd ..
+  docker-compose -f "$pwd/pi-hole/docker-compose.yml" up -d
   echo "pi-hole has been deployed at <server-ip>/admin/."
 fi
 
 if [ "$service" = "11" ]
 then
-echo "did you change the volumes filebrowser/docker-compose.yml? [y/n]?"
+echo "did you change the volumes in filebrowser/docker-compose.yml? [y/n]?"
   read filebrowser
   if [ "$filebrowser" = "y" ]
   then
-    sudo mkdir /filebrowser
-    cd filebrowser || exit
-    docker-compose up -d
-    cd ..
+    docker-compose -f "$pwd/filebrowser/docker-compose.yml" up -d
     echo"pi-hole has been deployed at <server-ip>:4431"
   else
     echo "please change volumes in filebrowser/docker-compose.yml"
@@ -131,19 +115,13 @@ fi
 
 if [ "$service" = "12" ]
 then
-  sudo mkdir /fresh-rrs
-  cd fress-rss || exit
-  docker-compose up -d
-  cd ..
+  docker-compose -f "$pwd/fressrss/docker-compose.yml" up -d
   echo "freshRSS has been deployed at <server-ip>:808"
 fi
 
 if [ "$service" = "13" ]
 then
-  sudo mkdir /magic-mirror
-  cd magic-mirror || exit
-  docker-compose up -d
-  cd ..
+  docker-compose -f "$pwd/magic-mirror/docker-compose.yml" up -d
   echo "magic-mirror has been deployed at <server-ip>:808"
 fi
 
