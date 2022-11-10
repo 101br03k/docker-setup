@@ -69,7 +69,7 @@ then
   echo "heimdall has been deployed at <server-ip>:8096"
 fi
 
-if [ "$service" = "6" ]
+if [ "$service" = "7" ]
 then
   docker-compose -f "$pwd/heimdall-traefik/docker-compose.yml" up -d
   echo "heimdall-traefik has been deployed at <server-ip>:8097"
