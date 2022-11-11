@@ -28,6 +28,11 @@ Pi-Hole
 
 Filebrowser
   4431:8080
+  
+Transmission
+  9091:9091
+  51413:51413
+  51413:51413/udp
 
 Fresh-rss
   80:808
