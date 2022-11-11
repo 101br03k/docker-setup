@@ -14,7 +14,7 @@ echo "9) uptime-kuma"
 echo "10) pi-hole"
 echo "11) filebrowser"
 echo "12) fresh-rss"
-echo "13) "
+echo "13) transmission"
 
 echo "100) ports"
 
@@ -122,6 +122,20 @@ then
 fi
 
 if [ "$service" = "13" ]
+then
+echo "did you change the paths in transmission/docker-compose.yml? [y/n]?"
+  read transmission
+  if [ "$transmission" = "y" ]
+  then
+    docker-compose -f "$pwd/transmission/docker-compose.yml" up -d
+    echo"transmission has been deployed at <server-ip>:4431"
+  else
+    echo "please change volumes in transmisison/docker-compose.yml"
+    exit
+  fi
+fi
+
+if [ "$service" = "" ]
 then
   docker-compose -f "$pwd/magic-mirror/docker-compose.yml" up -d
   echo "magic-mirror has been deployed at <server-ip>:808"
