@@ -20,11 +20,11 @@ Uptime-Kuma
   3001:3001
 
 Pi-Hole
-  "53:53/tcp"
-  "53:53/udp"
-  "67:67/udp"
-  "80:80/tcp"
-  "445:443/tcp"
+  53:53/tcp
+  53:53/udp
+  67:67/udp
+  80:80/tcp
+  445:443/tcp
 
 Filebrowser
   4431:8080
@@ -33,6 +33,9 @@ Transmission
   9091:9091
   51413:51413
   51413:51413/udp
+
+Speedtest tracker
+  8765:80
 
 Fresh-rss
   80:808
