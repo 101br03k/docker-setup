@@ -15,6 +15,7 @@ echo "10) pi-hole"
 echo "11) filebrowser"
 echo "12) fresh-rss"
 echo "13) transmission"
+echo "14) speedtest tracker"
 
 echo "100) ports"
 
@@ -128,12 +129,29 @@ echo "did you change the paths in transmission/docker-compose.yml? [y/n]?"
   if [ "$transmission" = "y" ]
   then
     docker-compose -f "$pwd/transmission/docker-compose.yml" up -d
-    echo"transmission has been deployed at <server-ip>:4431"
+    echo"transmission has been deployed at <server-ip>:9091"
   else
     echo "please change volumes in transmisison/docker-compose.yml"
     exit
   fi
 fi
+
+if [ "$service" = "13" ]
+then
+echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
+  read speedtesttracker
+  if [ "$speedtesttracker" = "y" ]
+  then
+    docker-compose -f "$pwd/speedtesttracker/docker-compose.yml" up -d
+    echo"speedtesttracker has been deployed at <server-ip>:4431"
+  else
+    echo "please change volumes in transmisison/docker-compose.yml"
+    exit
+  fi
+fi
+
+
+
 
 if [ "$service" = "" ]
 then
