@@ -98,6 +98,8 @@ fi
 
 if [ "$service" = "10" ]
 then
+  systemctl stop systemd-resolved.service
+  systemctl disable systemd-resolved.service 
   docker-compose -f "$pwd/pi-hole/docker-compose.yml" up -d
   echo "pi-hole has been deployed at <server-ip>/admin/."
 fi
@@ -136,7 +138,7 @@ echo "did you change the paths in transmission/docker-compose.yml? [y/n]?"
   fi
 fi
 
-if [ "$service" = "13" ]
+if [ "$service" = "14" ]
 then
 echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
   read speedtesttracker
