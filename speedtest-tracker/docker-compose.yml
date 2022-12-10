@@ -11,4 +11,4 @@ services:
         volumes:
             - '/media/config/speedtesttracker:/config'
         image: 'ghcr.io/alexjustesen/speedtest-tracker:latest'
-         restart: unless-stopped
+        restart: unless-stopped
