@@ -43,6 +43,8 @@ then
   echo "docker has been installed"
   sudo apt install docker-compose
   echo "docker compose has been installed"
+  sudo docker network create docker-setup-bridged
+  echo "docker network docker-setup-bridged has been created"
 fi
 
 if [ "$service" = "3" ]
