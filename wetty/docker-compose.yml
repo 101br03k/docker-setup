@@ -6,7 +6,7 @@ services:
     image: wettyoss/wetty
     networks:
       default:
-        name: docker-setup-bridged
+        name: bridged
           external: true
     ports:
     - 3000:3000
