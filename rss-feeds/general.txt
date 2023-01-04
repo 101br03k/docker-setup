@@ -6,3 +6,5 @@ https://status.lastpass.com/history.rss
 https://feeds.defensie.nl/nieuws.rss
 https://advisories.ncsc.nl/rss/advisories
 https://feeds.ncsc.nl/nieuws.rss
+http://feeds.bbci.co.uk/news/rss.xml?edition=int
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
