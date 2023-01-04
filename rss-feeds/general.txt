@@ -3,3 +3,6 @@ https://feeds.nos.nl/nossportformule1
 http://feeds.feedburner.com/tweakers/nieuws
 https://feeds.feedburner.com/tweakers/reviews
 https://status.lastpass.com/history.rss
+https://feeds.defensie.nl/nieuws.rss
+https://advisories.ncsc.nl/rss/advisories
+https://feeds.ncsc.nl/nieuws.rss
