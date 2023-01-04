@@ -16,6 +16,7 @@ echo "11) filebrowser"
 echo "12) fresh-rss"
 echo "13) transmission"
 echo "14) speedtest tracker"
+echo "15) HomeAssistant"
 
 echo "100) ports"
 
@@ -154,7 +155,19 @@ echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
   fi
 fi
 
-
+if [ "$service" = "14" ]
+then
+echo "did you change the paths in homeassistant/docker-compose.yml? [y/n]?"
+  read homeassistant
+  if [ "$homeassistant" = "y" ]
+  then
+    docker-compose -f "$pwd/homeassistant/docker-compose.yml" up -d
+    echo"homeassistant has been deployed at <server-ip>:8123"
+  else
+    echo "please change volumes in homeassistant/docker-compose.yml"
+    exit
+  fi
+fi
 
 
 if [ "$service" = "" ]
