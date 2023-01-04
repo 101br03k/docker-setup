@@ -1,4 +1,3 @@
-quote
 https://feeds.nos.nl/nosnieuwsalgemeen
 https://feeds.nos.nl/nossportformule1
 http://feeds.feedburner.com/tweakers/nieuws
