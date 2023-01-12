@@ -20,7 +20,8 @@ echo "15) HomeAssistant"
 
 echo "100) ports"
 
-echo "220) cockpit"
+echo "200) cockpit"
+echo "201) github.com/Slackadays/Clipboard"
 
 echo "please type the number of the service you want to run"
 read service
@@ -176,16 +177,22 @@ then
   echo "magic-mirror has been deployed at <server-ip>:808"
 fi
 
-if [ "$service" = "220" ]
+if [ "$service" = "100" ]
+then
+  more ports.txt
+fi
+
+if [ "$service" = "200" ]
 then
   sudo apt install cockpit
   docker ps
   echo "cockpit has been deployed at <server-ip>:9090"
 fi
 
-if [ "$service" = "100" ]
+if [ "$service" = "201" ]
 then
-  more ports.txt
+  curl -sSL https://github.com/Slackadays/Clipboard/raw/main/install.sh | bash
+  echo "github.com/Slackadays/Clipboard has been installed"
 fi
 
 ./run-services.sh
