@@ -12,4 +12,8 @@ services:
         volumes:
             - '/media/config/magic-mirror:/magicmirror2'
         restart: unless-stopped
+        networks:
+          default:
+            name: docker-setup-bridged
+              external: true
         image: ich777/magic-mirror2
