@@ -17,6 +17,7 @@ echo "12) fresh-rss"
 echo "13) transmission"
 echo "14) speedtest tracker"
 echo "15) HomeAssistant"
+echo "16) MagicMirror"
 
 echo "100) ports"
 
@@ -156,7 +157,7 @@ echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
   fi
 fi
 
-if [ "$service" = "14" ]
+if [ "$service" = "15" ]
 then
 echo "did you change the paths in homeassistant/docker-compose.yml? [y/n]?"
   read homeassistant
@@ -171,7 +172,7 @@ echo "did you change the paths in homeassistant/docker-compose.yml? [y/n]?"
 fi
 
 
-if [ "$service" = "" ]
+if [ "$service" = "16" ]
 then
   docker-compose -f "$pwd/magic-mirror/docker-compose.yml" up -d
   echo "magic-mirror has been deployed at <server-ip>:808"
