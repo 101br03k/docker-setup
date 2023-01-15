@@ -1,19 +1,19 @@
 version: '3.3'
 services:
-    magic-mirror2:
-        container_name: MagicMirror-2
-        ports:
-            - '808:8080'
-        environment:
-            - UID=100
-            - GID=100
-            - UMASK=000
-            - DATA_PERM=770
-        volumes:
-            - '/media/config/magic-mirror:/magicmirror2'
-        restart: unless-stopped
-        networks:
-          default:
-            name: docker-setup-bridged
-              external: true
-        image: ich777/magic-mirror2
+  magic-mirror2:
+      container_name: MagicMirror-2
+      ports:
+          - '808:8080'
+      environment:
+          - UID=100
+          - GID=100
+          - UMASK=000
+          - DATA_PERM=770
+      volumes:
+          - '/media/config/magic-mirror:/magicmirror2'
+      restart: unless-stopped
+      networks:
+        default:
+          name: docker-setup-bridged
+            external: true
+      image: ich777/magic-mirror2
