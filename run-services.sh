@@ -4,7 +4,7 @@ pwd=$(pwd)
 echo "what service do you want to run"
 echo "1) exit script"
 echo "2) docker"
-echo "3) portainer"
+echo "3) portainer-be"
 echo "4) dash. / dashdot"
 echo "5) watchtower"
 echo "6) heimdall"
@@ -18,6 +18,7 @@ echo "13) transmission"
 echo "14) speedtest tracker"
 echo "15) HomeAssistant"
 echo "16) MagicMirror"
+echo "17) Apprise"
 
 echo "100) ports"
 
@@ -46,14 +47,12 @@ then
   echo "docker has been installed"
   sudo apt install docker-compose
   echo "docker compose has been installed"
-  sudo docker network create docker-setup-bridged
-  echo "docker network docker-setup-bridged has been created"
 fi
 
 if [ "$service" = "3" ]
 then
   docker volume create portainer_data
-  docker run -d -p 8000:8000 -p 9443:9443 --name portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+  docker-compse -f "$pwd/docker-be/docker-compose.yml" up -d
   echo "portainer has been deployed at <server-ip>:9443"
 fi
 
@@ -177,6 +176,15 @@ then
   docker-compose -f "$pwd/magic-mirror/docker-compose.yml" up -d
   echo "magic-mirror has been deployed at <server-ip>:808"
 fi
+
+if [ "$service" = "17" ]
+then
+  docker-compose -f "$pwd/apprise/docker-compose.yml" up -d
+  echo "apprise has been deployed at <server-ip>:8766"
+fi
+
+
+
 
 if [ "$service" = "100" ]
 then
