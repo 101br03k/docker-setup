@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    run:
+        container_name: apprise
+        ports:
+            - '8766:8000'
+        volumes:
+            - '/var/lib/apprise/config:/config'
+        image: caronc/apprise:latest
+        restart: unless-stopped
