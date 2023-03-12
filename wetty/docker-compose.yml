@@ -4,10 +4,6 @@ services:
     command:
     - --ssh-host=192.168.0.20
     image: wettyoss/wetty
-    networks:
-      default:
-        name: bridged
-          external: true
     ports:
     - 3000:3000
     restart: unless-stopped
