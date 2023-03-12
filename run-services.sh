@@ -106,6 +106,7 @@ fi
 
 if [ "$service" = "10" ]
 then
+  docker pull pihole/pihole
   systemctl stop systemd-resolved.service
   systemctl disable systemd-resolved.service 
   docker-compose -f "$pwd/pi-hole/docker-compose.yml" up -d
