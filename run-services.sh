@@ -43,7 +43,7 @@ fi
 if [ "$service" = "2" ]
 then
   curl -sSL https://get.docker.com | sh
-  sudo usermod -aG docker pi
+  sudo usermod -aG docker adm-aw
   echo "docker has been installed"
   sudo apt install docker-compose
   echo "docker compose has been installed"
