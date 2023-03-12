@@ -8,8 +8,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 3001:3001  # <Host Port>:<Container Port>
-    networks:
-      default:
-        name: docker-setup-bridged
-          external: true
     restart: always
