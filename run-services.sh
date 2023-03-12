@@ -43,6 +43,10 @@ fi
 if [ "$service" = "2" ]
 then
   curl -sSL https://get.docker.com | sh
+  dockerd-rootless-setuptool.sh install
+  sudo sh -eux <<EOF
+  apt-get install -y uidmap
+  EOF
   sudo usermod -aG docker adm-aw
   echo "docker has been installed"
   sudo apt install docker-compose
