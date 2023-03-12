@@ -9,10 +9,6 @@ services:
       - TZ=Europe/Amsterdam
     volumes:
       - /heimdall:/config
-    networks:
-      default:
-        name: docker-setup-bridged
-          external: true
     ports:
       - 8096:80
       - 443:443
