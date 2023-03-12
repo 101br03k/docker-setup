@@ -16,7 +16,3 @@ services:
       - '3003:3001'
     volumes:
       - /:/mnt/host:ro
-    networks:
-      default:
-        name: bridged
-          external: true
