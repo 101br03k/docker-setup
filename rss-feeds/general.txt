@@ -12,5 +12,5 @@ https://www.nu.nl/rss/algemeen
 https://www.nu.nl/rss/economie
 https://www.nu.nl/rss/internet
 https://api.msrc.microsoft.com/update-guide/rss
-https://advisories.ncsc.nl/rss/advisories
 https://feeds.ncsc.nl/nieuws.rss
+https://www.vmware.com/security/advisories.xml
