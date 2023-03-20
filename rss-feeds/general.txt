@@ -1,5 +1,4 @@
 https://feeds.nos.nl/nosnieuwsalgemeen
-https://feeds.nos.nl/nossportformule1
 http://feeds.feedburner.com/tweakers/nieuws
 https://feeds.feedburner.com/tweakers/reviews
 https://status.lastpass.com/history.rss
