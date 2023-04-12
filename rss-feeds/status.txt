@@ -6,3 +6,4 @@ https://www.leasewebstatus.com/rss/maintenance
 https://www.leasewebstatus.com/rss/status
 https://www.leasewebstatus.com/rss/general
 https://azure.status.microsoft/nl-nl/status/feed/
+https://www.vercel-status.com/history.rss
