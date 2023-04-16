@@ -91,7 +91,7 @@ then
     if [ "$wetty" = "y" ]
     then
       docker-compose -f "$pwd/wetty/docker-compose.yml" up -d
-      echo "wetty has been deployed at <server-ip>:3000"
+      echo "wetty has been deployed at <server-ip>:3000/wetty"
     else
       echo "please change the user and ip in wetty/docker-compose.yml"
       exit
