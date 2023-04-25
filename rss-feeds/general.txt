@@ -14,3 +14,6 @@ https://api.msrc.microsoft.com/update-guide/rss
 https://feeds.ncsc.nl/nieuws.rss
 https://www.vmware.com/security/advisories.xml
 https://www.cisa.gov/cybersecurity-advisories/cybersecurity-advisories.xml
+https://www.sidn.nl/rss/news
+https://www.sidn.nl/rss/job-posting
+https://www.sidn.nl/rss/weblog
