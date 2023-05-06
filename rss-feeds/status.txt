@@ -1,9 +1,0 @@
-https://status.datto.com/history.rss
-https://cspreporter.nl/feed/actueel
-https://cspreporter.nl/feed/storingen
-https://cspreporter.nl/rss/werkzaamheden/
-https://www.leasewebstatus.com/rss/maintenance
-https://www.leasewebstatus.com/rss/status
-https://www.leasewebstatus.com/rss/general
-https://azure.status.microsoft/nl-nl/status/feed/
-https://www.vercel-status.com/history.rss
