@@ -42,3 +42,6 @@ Fresh-rss
 
 Magic-Mirror
   8070:8080
+
+dozzle
+  9999:8080
