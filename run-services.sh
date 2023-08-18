@@ -19,6 +19,7 @@ echo "14) speedtest tracker"
 echo "15) HomeAssistant"
 echo "16) MagicMirror"
 echo "17) Apprise"
+echo "18) Dozzle"
 
 echo "100) ports"
 
@@ -188,7 +189,11 @@ then
   echo "apprise has been deployed at <server-ip>:8766"
 fi
 
-
+if [ "$service" = "17" ]
+then
+  docker-compose -f "$pwd/dozzle/docker-compose.yml" up -d
+  echo "apprise has been deployed at <server-ip>:9999"
+fi
 
 
 if [ "$service" = "100" ]
