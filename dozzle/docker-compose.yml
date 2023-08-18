@@ -1,0 +1,18 @@
+version: "3"
+services:
+  dozzle:
+    image: amir20/dozzle:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 9999:8080
+    healthcheck:
+      test: ["CMD", "/dozzle", "healthcheck"]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    environment:
+      DOZZLE_USERNAME: adm-aw
+      DOZZLE_PASSWORD: Jekomternietin03
+      DOZZLE_NO_ANALYTICS: "true"
