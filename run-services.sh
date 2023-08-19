@@ -20,6 +20,8 @@ echo "15) HomeAssistant"
 echo "16) MagicMirror"
 echo "17) Apprise"
 echo "18) Dozzle"
+echo "19) kasm-web-1"
+echo "20) kasm-web-2"
 
 echo "100) ports"
 
@@ -201,6 +203,18 @@ then
       echo "please change the username and password in dozzle/docker-compose.yml"
       exit
     fi
+fi
+
+if [ "$service" = "19" ]
+then
+  docker-compose -f "$pwd/kasm-web-1/docker-compose.yml" up -d
+  echo "kasm-web-1 has been deployed at <server-ip>:6901"
+fi
+
+if [ "$service" = "20" ]
+then
+  docker-compose -f "$pwd/kasm-web-2/docker-compose.yml" up -d
+  echo "kasm-web-2 has been deployed at <server-ip>:6902"
 fi
 
 if [ "$service" = "100" ]
