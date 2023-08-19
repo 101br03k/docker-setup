@@ -10,7 +10,7 @@ services:
       TZ: Europ/Amsterdam               # required: needs your TZ for correct time
       IFACE: "eth0" # required: 1 or more interface
       DBPATH: "/data/db.sqlite"         # optional, default: /data/db.sqlite
-      GUIIP: "192.168.0.21"                  # optional, default: localhost
+      GUIIP: "localhost"                  # optional, default: localhost
       GUIPORT: "8840"                   # optional, default: 8840
       TIMEOUT: "180"                    # optional, time in seconds, default: 60
       THEME: "darkly"                   # optional
