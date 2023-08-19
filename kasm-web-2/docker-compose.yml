@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    firefox:
+        ports:
+            - '6902:6901'
+        environment:
+            - VNC_PW=password
+        container_name: kasmweb-firefox2
+        image: 'kasmweb/firefox:1.13.0'
+        restart: unless-stopped
