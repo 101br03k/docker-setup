@@ -1,6 +1,5 @@
 #!/bin/bash
 pwd=$(pwd)
-
 echo "what service do you want to run"
 echo "1) exit script"
 echo "2) docker"
@@ -22,6 +21,7 @@ echo "17) Apprise"
 echo "18) Dozzle"
 echo "19) kasm-web-1"
 echo "20) kasm-web-2"
+echo "21) watch-your-lan"
 
 echo "100) ports"
 
@@ -90,13 +90,13 @@ fi
 if [ "$service" = "8" ]
 then
   echo "did you change the user and ip in wetty/docker-compose.yml? [y/n]?"
-  read wetty
-    if [ "$wetty" = "y" ]
+  read yesorno
+    if [ "$yesorno" = "y" ]
     then
       docker-compose -f "$pwd/wetty/docker-compose.yml" up -d
       echo "wetty has been deployed at <server-ip>:3000/wetty"
     else
-      echo "please change the user and ip in wetty/docker-compose.yml"
+      echo "please change the required items"
       exit
     fi
 fi
@@ -119,13 +119,13 @@ fi
 if [ "$service" = "11" ]
 then
 echo "did you change the volumes in filebrowser/docker-compose.yml? [y/n]?"
-  read filebrowser
-  if [ "$filebrowser" = "y" ]
+  read yesorno
+  if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/filebrowser/docker-compose.yml" up -d
     echo"pi-hole has been deployed at <server-ip>:4431"
   else
-    echo "please change volumes in filebrowser/docker-compose.yml"
+    eecho "please change the required items"
     exit
   fi
 fi
@@ -139,13 +139,13 @@ fi
 if [ "$service" = "13" ]
 then
 echo "did you change the paths in transmission/docker-compose.yml? [y/n]?"
-  read transmission
-  if [ "$transmission" = "y" ]
+  read yesorno
+  if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/transmission/docker-compose.yml" up -d
     echo"transmission has been deployed at <server-ip>:9091"
   else
-    echo "please change volumes in transmisison/docker-compose.yml"
+    echo "please change the required items"
     exit
   fi
 fi
@@ -153,13 +153,13 @@ fi
 if [ "$service" = "14" ]
 then
 echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
-  read speedtesttracker
-  if [ "$speedtesttracker" = "y" ]
+  read yesorno
+  if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/speedtesttracker/docker-compose.yml" up -d
     echo"speedtesttracker has been deployed at <server-ip>:4431"
   else
-    echo "please change volumes in transmisison/docker-compose.yml"
+    echo "please change the required items"
     exit
   fi
 fi
@@ -167,13 +167,13 @@ fi
 if [ "$service" = "15" ]
 then
 echo "did you change the paths in homeassistant/docker-compose.yml? [y/n]?"
-  read homeassistant
-  if [ "$homeassistant" = "y" ]
+  read yesorno
+  if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/homeassistant/docker-compose.yml" up -d
     echo"homeassistant has been deployed at <server-ip>:8123"
   else
-    echo "please change volumes in homeassistant/docker-compose.yml"
+    echo "please change the required items"
     exit
   fi
 fi
@@ -194,13 +194,13 @@ fi
 if [ "$service" = "18" ]
 then
   echo "did you change username and password in /dozzle/docker-compose.yml? [y/n]?"
-  read wetty
-    if [ "$wetty" = "y" ]
+  read yesorno
+    if [ "$yesorno" = "y" ]
     then
       docker-compose -f "$pwd/dozzle/docker-compose.yml" up -d
-      echo "wetty has been deployed at <server-ip>:9999"
+      echo "dozzle has been deployed at <server-ip>:9999"
     else
-      echo "please change the username and password in dozzle/docker-compose.yml"
+      echo "please change the required items"
       exit
     fi
 fi
@@ -215,6 +215,20 @@ if [ "$service" = "20" ]
 then
   docker-compose -f "$pwd/kasm-web-2/docker-compose.yml" up -d
   echo "kasm-web-2 has been deployed at <server-ip>:6902"
+fi
+
+if [ "$service" = "21" ]
+then
+  echo "did you change the ip and timezone in watch-your-lan/docker-compose.yml? [y/n]?"
+  read yesorno
+    if [ "$yesorno" = "y" ]
+    then
+      docker-compose -f "$pwd/watch-your-lan/docker-compose.yml" up -d
+      echo "watch-your-lan has been deployed at <server-ip>:8840"
+    else
+      echo "please change the required items"
+      exit
+    fi
 fi
 
 if [ "$service" = "100" ]
