@@ -189,12 +189,19 @@ then
   echo "apprise has been deployed at <server-ip>:8766"
 fi
 
-if [ "$service" = "17" ]
+if [ "$service" = "18" ]
 then
-  docker-compose -f "$pwd/dozzle/docker-compose.yml" up -d
-  echo "apprise has been deployed at <server-ip>:9999"
+  echo "did you change username and password in /dozzle/docker-compose.yml? [y/n]?"
+  read wetty
+    if [ "$wetty" = "y" ]
+    then
+      docker-compose -f "$pwd/dozzle/docker-compose.yml" up -d
+      echo "wetty has been deployed at <server-ip>:9999"
+    else
+      echo "please change the username and password in dozzle/docker-compose.yml"
+      exit
+    fi
 fi
-
 
 if [ "$service" = "100" ]
 then
