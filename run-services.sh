@@ -219,11 +219,11 @@ fi
 
 if [ "$service" = "21" ]
 then
-  echo "did you change the ip and timezon in watch-your-lan/docker-compose.yml? [y/n]?"
+  echo "did you change the ip and timezone in watch-your-lan/docker-compose.yml? [y/n]?"
   read yesorno
     if [ "$yesorno" = "y" ]
     then
-      docker-compose -f "$pwd/dozzle/docker-compose.yml" up -d
+      docker-compose -f "$pwd/watch-your-lan/docker-compose.yml" up -d
       echo "watch-your-lan has been deployed at <server-ip>:8840"
     else
       echo "please change the required items"
