@@ -1,9 +1,20 @@
-Portainer
-  8000:8000
-  9443:9443
+apprise
+  8766:8000
+
+Cadvisor
+  8766:8000
 
 Dashdot
   3003:3003
+
+dozzle
+  9999:8080
+
+Filebrowser
+  4431:8080
+
+Fresh-rss
+  80:808
 
 Heimdall
   8096:80
@@ -13,11 +24,22 @@ Heimdall-Traefik
   8097:80
   444:443
 
-Wetty
-  3000:3000
+Homeassistant
+  8123
 
-Uptime-Kuma
-  3001:3001
+Kasm-web-1
+  6901:6901
+
+Kasm-web-2
+  6902:6901
+
+Magic-Mirror
+  808:8080
+
+OpenVPN
+  943:943
+  9444:9443
+  1194:1194/udp
 
 Pi-Hole
   53:53/tcp
@@ -26,22 +48,24 @@ Pi-Hole
   80:80/tcp
   445:443/tcp
 
-Filebrowser
-  4431:8080
-  
+Portainer-BE
+  8000:8000
+  9443:9443
+
+Speedtest tracker
+  8765:80
+  8443:443
+
 Transmission
   9091:9091
   51413:51413
   51413:51413/udp
 
-Speedtest tracker
-  8765:80
+Uptime-Kuma
+  3001:3001
 
-Fresh-rss
-  80:808
+Watch-Your-lan
+  8840
 
-Magic-Mirror
-  8070:8080
-
-dozzle
-  9999:8080
+Wetty
+  3000:3000
