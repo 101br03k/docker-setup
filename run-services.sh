@@ -1,93 +1,61 @@
 #!/bin/bash
 pwd=$(pwd)
-echo "what service do you want to run"
-echo "1) exit script"
-echo "2) docker"
-echo "3) portainer-be"
-echo "4) dash. / dashdot"
-echo "5) watchtower"
-echo "6) heimdall"
-echo "7) heimdall traefik"
-echo "8) wetty"
-echo "9) uptime-kuma"
-echo "10) pi-hole"
-echo "11) filebrowser"
-echo "12) fresh-rss"
-echo "13) transmission"
-echo "14) speedtest tracker"
-echo "15) HomeAssistant"
-echo "16) MagicMirror"
-echo "17) Apprise"
-echo "18) Dozzle"
-echo "19) kasm-web-1"
-echo "20) kasm-web-2"
-echo "21) watch-your-lan"
+ls -d */
 
-echo "100) ports"
-
-echo "200) cockpit"
-echo "201) github.com/Slackadays/Clipboard"
-
-echo "please type the number of the service you want to run"
+echo "please type name of the service you want to run"
+echo "type 1 to install docker"
 read service
 
 if [ "$service" = "1" ]
 then
-  echo "exit with reboot? [y/n]?"
-read reboot
-        if [ "$reboot" = "y" ]
-        then
-        reboot now
-        else
-        exit
-        fi
+  sudo apt-get install ca-certificates curl gnupg
+  sudo install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+  echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  sudo apt-get update
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+  sudo docker run hello-world
+
+  echo "docker should be installed now."
 fi
 
-if [ "$service" = "2" ]
-then
-  curl -sSL https://get.docker.com | sh
-  dockerd-rootless-setuptool.sh install
-  sudo sh -eux <<EOF
-  apt-get install -y uidmap
-  EOF
-  sudo usermod -aG docker adm-aw
-  echo "docker has been installed"
-  sudo apt install docker-compose
-  echo "docker compose has been installed"
-fi
-
-if [ "$service" = "3" ]
+if [ "$service" = "portainer" ]
 then
   docker volume create portainer_data
   docker-compse -f "$pwd/docker-be/docker-compose.yml" up -d
   echo "portainer has been deployed at <server-ip>:9443"
 fi
 
-if [ "$service" = "4" ]
+if [ "$service" = "dashdot" ]
 then
   docker-compose -f "$pwd/dashdot/docker-compose.yml" up -d
   echo "dashdot has been deployed at <server-ip>:3003"
 fi
 
-if [ "$service" = "5" ]
+if [ "$service" = "watchtower" ]
 then
   docker-compose -f "$pwd/watchtower/docker-compose.yml" up -d
   echo "watchtower has been deployed"
 fi
 
-if [ "$service" = "6" ]
+if [ "$service" = "heimdall" ]
 then
   docker-compose -f "$pwd/heimdall/docker-compose.yml" up -d
   echo "heimdall has been deployed at <server-ip>:8096"
 fi
 
-if [ "$service" = "7" ]
+if [ "$service" = "heimdall-traefik" ]
 then
   docker-compose -f "$pwd/heimdall-traefik/docker-compose.yml" up -d
   echo "heimdall-traefik has been deployed at <server-ip>:8097"
 fi
 
-if [ "$service" = "8" ]
+if [ "$service" = "wetty" ]
 then
   echo "did you change the user and ip in wetty/docker-compose.yml? [y/n]?"
   read yesorno
@@ -101,13 +69,13 @@ then
     fi
 fi
 
-if [ "$service" = "9" ]
+if [ "$service" = "uptime-kuma" ]
 then
   docker-compose -f "$pwd/uptime-kuma/docker-compose.yml" up -d
   echo "uptime-kuma has been deployed at <server-ip>:3001"
 fi
 
-if [ "$service" = "10" ]
+if [ "$service" = "pi-hole" ]
 then
   docker pull pihole/pihole
   systemctl stop systemd-resolved.service
@@ -116,7 +84,7 @@ then
   echo "pi-hole has been deployed at <server-ip>/admin/."
 fi
 
-if [ "$service" = "11" ]
+if [ "$service" = "filebrowser" ]
 then
 echo "did you change the volumes in filebrowser/docker-compose.yml? [y/n]?"
   read yesorno
@@ -130,13 +98,13 @@ echo "did you change the volumes in filebrowser/docker-compose.yml? [y/n]?"
   fi
 fi
 
-if [ "$service" = "12" ]
+if [ "$service" = "fressrss" ]
 then
   docker-compose -f "$pwd/fressrss/docker-compose.yml" up -d
   echo "freshRSS has been deployed at <server-ip>:808"
 fi
 
-if [ "$service" = "13" ]
+if [ "$service" = "transmission" ]
 then
 echo "did you change the paths in transmission/docker-compose.yml? [y/n]?"
   read yesorno
@@ -150,7 +118,7 @@ echo "did you change the paths in transmission/docker-compose.yml? [y/n]?"
   fi
 fi
 
-if [ "$service" = "14" ]
+if [ "$service" = "speedtesttracker" ]
 then
 echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
   read yesorno
@@ -164,7 +132,7 @@ echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
   fi
 fi
 
-if [ "$service" = "15" ]
+if [ "$service" = "homeassistant" ]
 then
 echo "did you change the paths in homeassistant/docker-compose.yml? [y/n]?"
   read yesorno
@@ -179,19 +147,19 @@ echo "did you change the paths in homeassistant/docker-compose.yml? [y/n]?"
 fi
 
 
-if [ "$service" = "16" ]
+if [ "$service" = "magic-mirror" ]
 then
   docker-compose -f "$pwd/magic-mirror/docker-compose.yml" up -d
   echo "magic-mirror has been deployed at <server-ip>:808"
 fi
 
-if [ "$service" = "17" ]
+if [ "$service" = "apprise" ]
 then
   docker-compose -f "$pwd/apprise/docker-compose.yml" up -d
   echo "apprise has been deployed at <server-ip>:8766"
 fi
 
-if [ "$service" = "18" ]
+if [ "$service" = "dozzle" ]
 then
   echo "did you change username and password in /dozzle/docker-compose.yml? [y/n]?"
   read yesorno
@@ -205,13 +173,13 @@ then
     fi
 fi
 
-if [ "$service" = "19" ]
+if [ "$service" = "kasm-web-1" ]
 then
   docker-compose -f "$pwd/kasm-web-1/docker-compose.yml" up -d
   echo "kasm-web-1 has been deployed at <server-ip>:6901"
 fi
 
-if [ "$service" = "20" ]
+if [ "$service" = "kasm-web-2" ]
 then
   docker-compose -f "$pwd/kasm-web-2/docker-compose.yml" up -d
   echo "kasm-web-2 has been deployed at <server-ip>:6902"
@@ -221,7 +189,7 @@ if [ "$service" = "21" ]
 then
   echo "did you change the ip and timezone in watch-your-lan/docker-compose.yml? [y/n]?"
   read yesorno
-    if [ "$yesorno" = "y" ]
+    if [ "$yesorno" = "watch-your-lan" ]
     then
       docker-compose -f "$pwd/watch-your-lan/docker-compose.yml" up -d
       echo "watch-your-lan has been deployed at <server-ip>:8840"
@@ -231,22 +199,13 @@ then
     fi
 fi
 
+if [ "$service" = "cadvisor" ]
+then
+  docker-compose -f "$pwd/cadvisor/docker-compose.yml" up -d
+  echo "kasm-web-2 has been deployed at <server-ip>:8888"
+fi
+
 if [ "$service" = "100" ]
 then
   more ports.txt
 fi
-
-if [ "$service" = "200" ]
-then
-  sudo apt install cockpit
-  docker ps
-  echo "cockpit has been deployed at <server-ip>:9090"
-fi
-
-if [ "$service" = "201" ]
-then
-  curl -sSL https://github.com/Slackadays/Clipboard/raw/main/install.sh | bash
-  echo "github.com/Slackadays/Clipboard has been installed"
-fi
-
-./run-services.sh

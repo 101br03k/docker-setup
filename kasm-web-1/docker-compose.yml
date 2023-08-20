@@ -2,7 +2,7 @@ version: '3.3'
 services:
     firefox:
         ports:
-            - '6901:6901'
+            - 6901:6901
         environment:
             - VNC_PW=password
         container_name: kasmweb-firefox-1
