@@ -199,10 +199,16 @@ then
     fi
 fi
 
+if [ "$service" = "wordpress" ]
+then
+  docker-compose -f "$pwd/wordpress/docker-compose.yml" up -d
+  echo "wordpress has been deployed at <server-ip>:9080"
+fi
+
 if [ "$service" = "cadvisor" ]
 then
   docker-compose -f "$pwd/cadvisor/docker-compose.yml" up -d
-  echo "kasm-web-2 has been deployed at <server-ip>:8888"
+  echo "cadvisor has been deployed at <server-ip>:8888"
 fi
 
 if [ "$service" = "100" ]
