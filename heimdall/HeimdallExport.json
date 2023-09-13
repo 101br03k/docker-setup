@@ -1,0 +1,154 @@
+[
+  {
+    "title": "Portainer",
+    "colour": "#161b1f",
+    "url": "https://192.168.0.21:9443",
+    "description": "{\"enabled\":\"1\",\"dataonly\":\"1\",\"override_url\":null,\"username\":\"heimdall\",\"password\":\"Jekomternietin03\",\"ignore_tls\":\"1\"}",
+    "appid": "07b796b3a10eaa8b6f485ed2379187a39400b459",
+    "appdescription": "Portainer is a simple management solution for Docker. Easily manage your Docker hosts and Docker Swarm clusters via Portainer web user interface."
+  },
+  {
+    "title": "Watch Your Lan",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.21:8840",
+    "description": null,
+    "appid": "null",
+    "appdescription": "Watch Your Lan"
+  },
+  {
+    "title": "Modem",
+    "colour": "#fafbfc",
+    "url": "http://192.168.0.1",
+    "description": null,
+    "appid": "77eb1db6cb81b3cb088d36ab7aae8f230dcfaa28",
+    "appdescription": "A router is a networking device that forwards data packets between computer networks."
+  },
+  {
+    "title": "Switch",
+    "colour": "#fafbfc",
+    "url": "http://192.168.0.5",
+    "description": null,
+    "appid": "77eb1db6cb81b3cb088d36ab7aae8f230dcfaa28",
+    "appdescription": "A router is a networking device that forwards data packets between computer networks."
+  },
+  {
+    "title": "Pi-hole",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.21/admin",
+    "description": "{\"enabled\":\"1\",\"dataonly\":\"1\",\"override_url\":null,\"apikey\":null}",
+    "appid": "b89920409bdce40e08ba1023480b0546061cd577",
+    "appdescription": "Pi-hole is a Linux network-level advertisement and internet tracker blocking application which acts as a DNS sinkhole, intended for use on a private network."
+  },
+  {
+    "title": "Wetty",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.21:3000/wetty",
+    "description": null,
+    "appid": "9b4e87ab376cf2327facda32fa98617676dfccd9",
+    "appdescription": "WeTTy = Web + TTy. Terminal web app in browser over http/https. (Ajaxterm/Anyterm alternative, but much better). WeTTy is an alternative to ajaxterm and anyterm but much better than them because WeTTy uses xterm.js which is a full fledged implementation of terminal emulation written entirely in JavaScript. WeTTy uses websockets rather then Ajax and hence better response time."
+  },
+  {
+    "title": "HP ENVY 4520",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.15/",
+    "description": null,
+    "appid": "3d3221b2db3115d65e938a1c497f209256c6185f",
+    "appdescription": "A printer is a peripheral device which makes a persistent representation of graphics or text, usually on paper.  Printers that have a network connection often include a built-in web server that lets you manage the printer from any browser on the network."
+  },
+  {
+    "title": "Kasmweb/firefox1",
+    "colour": "#161b1f",
+    "url": "https://192.168.0.21:6901",
+    "description": null,
+    "appid": "null",
+    "appdescription": "username: kasm_user\r\npassword: password"
+  },
+  {
+    "title": "kasmweb/firefox2",
+    "colour": "#161b1f",
+    "url": "https://192.168.0.21:6902/",
+    "description": null,
+    "appid": "null",
+    "appdescription": "username: kasm_user\r\npassword: password"
+  },
+  {
+    "title": "Netdata",
+    "colour": "#161b1f",
+    "url": "https://app.netdata.cloud/spaces/netdata-cloud-space-x01oyh4/rooms/all-nodes/dashboards/main?utm_source=website&utm_content=top_navigation_sign_in#metrics_correlation=false&after=-900&before=0&utc=Europe%2FAmsterdam&offset=%2B2&timezoneName=Amsterdam%2C%20Berlin%2C%20Bern%2C%20Rome%2C%20Stockholm%2C%20Vienna&modal=&modalTab=&modalParams=&selectedIntegrationCategory=deploy.operating-systems",
+    "description": "{\"enabled\":\"0\",\"override_url\":null}",
+    "appid": "810d3926feac8c1bd3957fdac48b6c9475b932d0",
+    "appdescription": "Unparalleled insights, in real-time, of everything happening on your systems and applications, with stunning, interactive web dashboards and powerful performance and health alarms."
+  },
+  {
+    "title": "Dozzle",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.21:9999/",
+    "description": null,
+    "appid": "176d99d897dbd7c02b1a1db4142054f74a76aa47",
+    "appdescription": "Dozzle is a real-time log viewer for docker containers."
+  },
+  {
+    "title": "Cadvisor",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.21:8888/containers/",
+    "description": null,
+    "appid": "null",
+    "appdescription": null
+  },
+  {
+    "title": "Sonarr",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.22:8989",
+    "description": "{\"enabled\":\"1\",\"override_url\":null,\"apikey\":\"998058b2b15843ad9a9e08c48c1c30b4\"}",
+    "appid": "6e2a525ceb737f9ed8badcef5eb20d1502e39656",
+    "appdescription": "Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available."
+  },
+  {
+    "title": "qBittorrent",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.22:8080",
+    "description": "{\"enabled\":\"1\",\"override_url\":null,\"username\":\"adm-aw\",\"password\":\"Jekomternietin03\"}",
+    "appid": "3ebd4dd8afe6308e392ccf09e3516eee99a1e8df",
+    "appdescription": "The qBittorrent project aims to provide an open-source software alternative to µTorrent."
+  },
+  {
+    "title": "Prowlarr",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.22:9696/",
+    "description": "{\"enabled\":\"1\",\"override_url\":null,\"apikey\":\"cc9f797b095c41c3980f3830a20df173\"}",
+    "appid": "de6ff49c94538e6e13a77f75991141a4fe9af8bf",
+    "appdescription": "Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps. Prowlarr supports both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr, Lidarr, and Readarr offering complete management of your indexers with no per app Indexer setup required (we do it all)."
+  },
+  {
+    "title": "Radarr",
+    "colour": "#fafbfc",
+    "url": "http://192.168.0.22:7878/",
+    "description": "{\"enabled\":\"1\",\"override_url\":null,\"apikey\":\"208fe06aea60416bb07dd82069986c82\"}",
+    "appid": "8a5cd39a1a5dff323d63bbe45fffe0c9c03bd2e7",
+    "appdescription": "Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.\r\n\r\nThe project was inspired by other Usenet/BitTorrent movie downloaders such as CouchPotato."
+  },
+  {
+    "title": "Readarr",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.22:8787/",
+    "description": "{\"enabled\":\"1\",\"override_url\":null,\"apikey\":\"f8bdb64b102c49aea1f3d4560035d23f\"}",
+    "appid": "533ab349d29dba8f2ecc5a552ba8846a9453f82a",
+    "appdescription": "Readarr is a ebook (and maybe eventually magazine/audiobook) collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new books from your favorite authors and will grab, sort and rename them."
+  },
+  {
+    "title": "Lidarr",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.22:8686/",
+    "description": "{\"enabled\":\"1\",\"override_url\":null,\"apikey\":\"43cd5262f60042ec83922452b21c0282\"}",
+    "appid": "c015fff30a3dc43f5987079c0142437e3e757fd0",
+    "appdescription": "Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them."
+  },
+  {
+    "title": "Bazarr",
+    "colour": "#161b1f",
+    "url": "http://192.168.0.22:6767/",
+    "description": "{\"enabled\":\"1\",\"override_url\":null,\"apikey\":\"8c7b36f6994fb0c11b423b9486dc682f\"}",
+    "appid": "085f0b437f9bf9c98bb68b745c8dcf323a7e0499",
+    "appdescription": "Bazarr is a companion application to Sonarr and Radarr. It manage and download subtitles based on your requirements. You defined your preferences by TV show or movies and Bazarr take care of everything for you."
+  }
+]
