@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - This changelog
 
   ### Changed
-  - none
+   - run-services.sh -> kasm-web-1 & kasm-web-2 into 1 part because its already in 1 compose file
 
   ### Fixed
   - run-services.sh -> Watch-your-lan
