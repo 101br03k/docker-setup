@@ -28,13 +28,13 @@ if [ "$service" = "portainer" ]
 then
   docker volume create portainer_data
   docker-compse -f "$pwd/docker-be/docker-compose.yml" up -d
-  echo "portainer has been deployed at <server-ip>:9443"
+  echo "portainer has been deployed at localhost:9443"
 fi
 
 if [ "$service" = "dashdot" ]
 then
   docker-compose -f "$pwd/dashdot/docker-compose.yml" up -d
-  echo "dashdot has been deployed at <server-ip>:3003"
+  echo "dashdot has been deployed at localhost:3003"
 fi
 
 if [ "$service" = "watchtower" ]
@@ -46,13 +46,13 @@ fi
 if [ "$service" = "heimdall" ]
 then
   docker-compose -f "$pwd/heimdall/docker-compose.yml" up -d
-  echo "heimdall has been deployed at <server-ip>:8096"
+  echo "heimdall has been deployed at localhost:8096"
 fi
 
 if [ "$service" = "heimdall-traefik" ]
 then
   docker-compose -f "$pwd/heimdall-traefik/docker-compose.yml" up -d
-  echo "heimdall-traefik has been deployed at <server-ip>:8097"
+  echo "heimdall-traefik has been deployed at localhost:8097"
 fi
 
 if [ "$service" = "wetty" ]
@@ -62,7 +62,7 @@ then
     if [ "$yesorno" = "y" ]
     then
       docker-compose -f "$pwd/wetty/docker-compose.yml" up -d
-      echo "wetty has been deployed at <server-ip>:3000/wetty"
+      echo "wetty has been deployed at localhost:3000/wetty"
     else
       echo "please change the required items"
       exit
@@ -72,7 +72,7 @@ fi
 if [ "$service" = "uptime-kuma" ]
 then
   docker-compose -f "$pwd/uptime-kuma/docker-compose.yml" up -d
-  echo "uptime-kuma has been deployed at <server-ip>:3001"
+  echo "uptime-kuma has been deployed at localhost:3001"
 fi
 
 if [ "$service" = "pi-hole" ]
@@ -81,7 +81,7 @@ then
   systemctl stop systemd-resolved.service
   systemctl disable systemd-resolved.service 
   docker-compose -f "$pwd/pi-hole/docker-compose.yml" up -d
-  echo "pi-hole has been deployed at <server-ip>/admin/."
+  echo "pi-hole has been deployed at localhost/admin/."
 fi
 
 if [ "$service" = "filebrowser" ]
@@ -91,7 +91,7 @@ echo "did you change the volumes in filebrowser/docker-compose.yml? [y/n]?"
   if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/filebrowser/docker-compose.yml" up -d
-    echo"pi-hole has been deployed at <server-ip>:4431"
+    echo"pi-hole has been deployed at localhost:4431"
   else
     eecho "please change the required items"
     exit
@@ -101,7 +101,7 @@ fi
 if [ "$service" = "fressrss" ]
 then
   docker-compose -f "$pwd/fressrss/docker-compose.yml" up -d
-  echo "freshRSS has been deployed at <server-ip>:808"
+  echo "freshRSS has been deployed at localhost:808"
 fi
 
 if [ "$service" = "transmission" ]
@@ -111,7 +111,7 @@ echo "did you change the paths in transmission/docker-compose.yml? [y/n]?"
   if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/transmission/docker-compose.yml" up -d
-    echo"transmission has been deployed at <server-ip>:9091"
+    echo"transmission has been deployed at localhost:9091"
   else
     echo "please change the required items"
     exit
@@ -125,7 +125,7 @@ echo "did you change the paths in speedtesttracker/docker-compose.yml? [y/n]?"
   if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/speedtesttracker/docker-compose.yml" up -d
-    echo"speedtesttracker has been deployed at <server-ip>:4431"
+    echo"speedtesttracker has been deployed at localhost:4431"
   else
     echo "please change the required items"
     exit
@@ -139,7 +139,7 @@ echo "did you change the paths in homeassistant/docker-compose.yml? [y/n]?"
   if [ "$yesorno" = "y" ]
   then
     docker-compose -f "$pwd/homeassistant/docker-compose.yml" up -d
-    echo"homeassistant has been deployed at <server-ip>:8123"
+    echo"homeassistant has been deployed at localhost:8123"
   else
     echo "please change the required items"
     exit
@@ -150,13 +150,13 @@ fi
 if [ "$service" = "magic-mirror" ]
 then
   docker-compose -f "$pwd/magic-mirror/docker-compose.yml" up -d
-  echo "magic-mirror has been deployed at <server-ip>:808"
+  echo "magic-mirror has been deployed at localhost:808"
 fi
 
 if [ "$service" = "apprise" ]
 then
   docker-compose -f "$pwd/apprise/docker-compose.yml" up -d
-  echo "apprise has been deployed at <server-ip>:8766"
+  echo "apprise has been deployed at localhost:8766"
 fi
 
 if [ "$service" = "dozzle" ]
@@ -166,33 +166,28 @@ then
     if [ "$yesorno" = "y" ]
     then
       docker-compose -f "$pwd/dozzle/docker-compose.yml" up -d
-      echo "dozzle has been deployed at <server-ip>:9999"
+      echo "dozzle has been deployed at localhost:9999"
     else
       echo "please change the required items"
       exit
     fi
 fi
 
-if [ "$service" = "kasm-web-1" ]
+if [ "$service" = "kasm-web" ]
 then
-  docker-compose -f "$pwd/kasm-web-1/docker-compose.yml" up -d
-  echo "kasm-web-1 has been deployed at <server-ip>:6901"
+  docker-compose -f "$pwd/kasm-web/docker-compose.yml" up -d
+  echo "kasm-web-1 has been deployed at localhost:6901"
+  echo "kasm-web-1 has been deployed at localhost:6902"
 fi
 
-if [ "$service" = "kasm-web-2" ]
-then
-  docker-compose -f "$pwd/kasm-web-2/docker-compose.yml" up -d
-  echo "kasm-web-2 has been deployed at <server-ip>:6902"
-fi
-
-if [ "$service" = "21" ]
+if [ "$service" = "watch-your-lan" ]
 then
   echo "did you change the ip and timezone in watch-your-lan/docker-compose.yml? [y/n]?"
   read yesorno
-    if [ "$yesorno" = "watch-your-lan" ]
+    if [ "$yesorno" = "y" ]
     then
       docker-compose -f "$pwd/watch-your-lan/docker-compose.yml" up -d
-      echo "watch-your-lan has been deployed at <server-ip>:8840"
+      echo "watch-your-lan has been deployed at localhost:8840"
     else
       echo "please change the required items"
       exit
@@ -202,16 +197,25 @@ fi
 if [ "$service" = "wordpress" ]
 then
   docker-compose -f "$pwd/wordpress/docker-compose.yml" up -d
-  echo "wordpress has been deployed at <server-ip>:9080"
+  echo "wordpress has been deployed at localhost:9080"
 fi
 
 if [ "$service" = "cadvisor" ]
 then
   docker-compose -f "$pwd/cadvisor/docker-compose.yml" up -d
-  echo "cadvisor has been deployed at <server-ip>:8888"
+  echo "cadvisor has been deployed at localhost:8888"
 fi
 
-if [ "$service" = "100" ]
+if [ "$service" = "feedcord" ]
 then
-  more ports.txt
+  echo "did you change the ip and timezone in feedcord/docker-compose.yml? [y/n]?"
+  read yesorno
+    if [ "$yesorno" = "y" ]
+    then
+      docker-compose -f "$pwd/feedcord/docker-compose.yml" up -d
+      echo "feedcord has been deployed at"
+    else
+      echo "please change the required items"
+      exit
+    fi
 fi
