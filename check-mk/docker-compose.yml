@@ -7,6 +7,6 @@ services:
         volumes:
             - /omd/sites
             - '/etc/localtime:/etc/localtime:ro'
-        container_name: monitoring
+        container_name: check-mk
         restart: unless-stopped
         image: 'checkmk/check-mk-raw:2.0.0-latest'
