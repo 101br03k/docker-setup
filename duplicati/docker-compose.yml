@@ -1,0 +1,20 @@
+---
+version: "2.1"
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europa/Amsterdam
+      - CLI_ARGS= #optional
+    volumes:
+      - /docker/docker-setup/duplicati/config:/config
+      - /backup:/backups
+      - /docker/:/source
+    ports:
+      - 8200:8200
+    restart: unless-stopped
+    #if using speedtest-tracker exclude: /source/docker-setup/speedtest-tracker/web/ssl.key
+    #if using nginxproxymanager exclude: /docker-setup/nginxproxymanager/letsencrypt/
