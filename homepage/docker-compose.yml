@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   homepage:
-    image: ghcr.io/benphelps/homepage:latest
+    image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
     ports:
       - 3006:3000
@@ -11,4 +11,13 @@ services:
     # user: 1000:1000 optional, not compatibile with direct socket see https://gethomepage.dev/en/configs/docker/#using-socket-directly
     restart: unless-stopped
 
-#CONFIG can be found at: https://github.com/101br03k/homepage-config (seperate repo cause private cause API keys and usernames and passwords)
+#  homepage-status:
+#    image: ghcr.io/benphelps/homepage:latest
+#    container_name: homepage-status
+#    ports:
+#      - 3007:3000
+#    volumes:
+#      - /docker/docker-setup/homepage/status-config:/app/config # Make sure your local config directory exists
+#      - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
+    # user: 1000:1000 optional, not compatibile with direct socket see https://gethomepage.dev/en/configs/docker/#using-socket-directly
+#    restart: unless-stopped
