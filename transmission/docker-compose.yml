@@ -18,3 +18,4 @@ services:
       - 51413:51413
       - 51413:51413/udp
     restart: unless-stopped
+    network_mode: bridge

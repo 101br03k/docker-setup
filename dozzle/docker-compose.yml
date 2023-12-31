@@ -18,3 +18,4 @@ services:
       DOZZLE_PASSWORD: admin
       DOZZLE_NO_ANALYTICS: "true"
     restart: unless-stopped
+    network_mode: bridge

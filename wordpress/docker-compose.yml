@@ -12,6 +12,7 @@ services:
       WORDPRESS_DB_NAME: exampledb
     volumes:
       - wordpress:/var/www/html
+    network_mode: bridge
       
   db:
     image: mysql:5.7

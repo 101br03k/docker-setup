@@ -12,3 +12,4 @@ services:
             - '/media/config/speedtesttracker:/config'
         image: 'ghcr.io/alexjustesen/speedtest-tracker:latest'
         restart: unless-stopped
+        network_mode: bridge

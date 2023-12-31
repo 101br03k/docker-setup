@@ -16,3 +16,4 @@ services:
     environment:
       # Tell Dockge where to find the stacks
       - DOCKGE_STACKS_DIR=/docker/docker-setup/dockge
+    network_mode: bridge

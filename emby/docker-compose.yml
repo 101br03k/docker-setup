@@ -3,7 +3,6 @@ services:
   emby:
     image: emby/embyserver
     container_name: embyserver
-    network_mode: bridge
     environment:
       - UID=1000 # The UID to run emby as (default: 2)
       - GID=1000 # The GID to run emby as (default 2)
@@ -16,3 +15,4 @@ services:
       - 8196:8096 # HTTP port
       - 8920:8920 # HTTPS port
     restart: unless-stopped
+    network_mode: bridge
