@@ -16,5 +16,6 @@ services:
     ports:
       - 8200:8200
     restart: unless-stopped
+    network_mode: bridge
     #if using speedtest-tracker exclude: /source/docker-setup/speedtest-tracker/web/ssl.key
     #if using nginxproxymanager exclude: /docker-setup/nginxproxymanager/letsencrypt/

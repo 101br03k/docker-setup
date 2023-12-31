@@ -20,3 +20,4 @@ services:
         devices:
             - /dev/kmsg
         image: 'gcr.io/cadvisor/cadvisor:latest'
+        network_mode: bridge

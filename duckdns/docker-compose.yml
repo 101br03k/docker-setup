@@ -16,3 +16,4 @@ services:
 #    volumes:
 #      - /path/to/appdata/config:/config #optional
     restart: unless-stopped
+    network_mode: bridge

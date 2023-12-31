@@ -10,3 +10,4 @@ services:
         container_name: monitoring
         restart: unless-stopped
         image: 'checkmk/check-mk-raw:2.0.0-latest'
+        network_mode: bridge

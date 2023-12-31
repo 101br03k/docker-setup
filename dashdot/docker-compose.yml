@@ -16,3 +16,4 @@ services:
       - '3003:3001'
     volumes:
       - /:/mnt/host:ro
+    network_mode: bridge

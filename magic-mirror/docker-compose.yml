@@ -13,3 +13,4 @@ services:
         - '/media/config/magic-mirror:/magicmirror2'
     restart: unless-stopped
     image: ich777/magic-mirror2
+    network_mode: bridge

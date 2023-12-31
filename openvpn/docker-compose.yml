@@ -16,3 +16,4 @@ services:
       - 9444:9443
       - 1194:1194/udp
     restart: unless-stopped
+    network_mode: bridge

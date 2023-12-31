@@ -10,7 +10,4 @@ services:
     environment:
       - FB_BASEURL=/filebrowser
     restart: unless-stopped
-    networks:
-      default:
-        name: docker-setup-bridged
-          external: true
+    network_mode: bridge

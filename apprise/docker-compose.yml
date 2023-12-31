@@ -8,3 +8,4 @@ services:
             - '/var/lib/apprise/config:/config'
         image: caronc/apprise:latest
         restart: unless-stopped
+        network_mode: bridge

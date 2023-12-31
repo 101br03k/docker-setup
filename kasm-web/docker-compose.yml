@@ -8,6 +8,7 @@ services:
         container_name: kasmweb-firefox-1
         image: 'kasmweb/firefox:1.13.0'
         restart: unless-stopped
+        network_mode: bridge
         
     kasmweb2:
         ports:
@@ -17,3 +18,4 @@ services:
         container_name: kasmweb-firefox-2
         image: 'kasmweb/firefox:1.13.0'
         restart: unless-stopped
+        network_mode: bridge
