@@ -23,12 +23,6 @@
         href: https://192.168.0.21:9443
         ping: https://192.168.0.21:9443
         icon: portainer
-#        widget:
-#          type: portainer
-#          url: https://192.168.0.21:9443
-#          env: 1
-#          key: ptr_x3OO3FkaqnJGZOoVFjHosGNx+R4iRvMkxkjnG41J2wo=
-#          fields: ["running", "stopped", "total"]
     - Pi-Hole:
         href: http://192.168.0.21/admin/
         ping: http://192.168.0.21/admin/
