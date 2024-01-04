@@ -6,7 +6,7 @@ services:
     ports:
       - 3006:3000
     volumes:
-      - /docker/docker-setup/homepage/config:/app/config # Make sure your local config directory exists
+      - /docker/docker-setup/homepage-config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
     # user: 1000:1000 optional, not compatibile with direct socket see https://gethomepage.dev/en/configs/docker/#using-socket-directly
     restart: unless-stopped
