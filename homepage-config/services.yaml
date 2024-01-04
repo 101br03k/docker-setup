@@ -47,11 +47,11 @@
         description: A distributed, real-time, performance and health monitoring platform for systems, hardware, containers and applications
         href: https://app.netdata.cloud/spaces/netdata-cloud-space-x01oyh4/rooms/all-nodes/dashboards/main?utm_source=website&utm_content=top_navigation_sign_in#metrics_correlation=false&after=-900&before=0&utc=Europe%2FAmsterdam&offset=%2B2&timezoneName=Amsterdam%2C%20Berlin%2C%20Bern%2C%20Rome%2C%20Stockholm%2C%20Vienna&modal=&modalTab=&modalParams=&selectedIntegrationCategory=deploy.operating-systems
         icon: netdata
-    - Cadvisor:
-        description: Container Advisor
-        href: http://192.168.0.21:8888/containers/
-        ping: http://192.168.0.21:8888/containers/
-        icon: https://raw.githubusercontent.com/101br03k/docker-setup/main/logo's/cadvisor.png
+#    - Cadvisor:
+#        description: Container Advisor
+#        href: http://192.168.0.21:8888/containers/
+#        ping: http://192.168.0.21:8888/containers/
+#        icon: https://raw.githubusercontent.com/101br03k/docker-setup/main/logo's/cadvisor.png
     - Dozzle:
         description: A lightweight, web-based Docker log viewer that provides real-time monitoring and easy troubleshooting.
         href: http://192.168.0.21:9999
@@ -62,10 +62,7 @@
         href: http://192.168.0.21:61208
         ping: http://192.168.0.21:61208
         icon: glances
-#        widget:
-#          type: glances
-#          url: http://192.168.0.21:61208
-#          metric: info
+
     - Speedtest-tracker:
         description: Speedtest-tracker and database
         href: http://192.168.0.21:8080
@@ -93,14 +90,12 @@
 
 - Media:
     - Qbittorrent:
-        href: http://192.168.0.22:8080
-        ping: http://192.168.0.22:8080
+        href: http://192.168.0.22:18080
+        ping: http://192.168.0.22:18080
         icon: qbittorrent
         widget:
           type: qbittorrent
-          url: http://192.168.0.22:8080
-          username: adm-aw
-          password: Jekomternietin03
+          url: http://192.168.0.22:18080
     - Prowlarr:
         description: An indexer manager made integrate with your PVR apps.
         href: http://192.168.0.22:9696
@@ -202,16 +197,12 @@
           slug: wan
           fields: ["up", "down", "uptime", "incident"]
    - Qbittorrent:
-           href: http://192.168.0.22:8080
-           ping: http://192.168.0.22:8080
+           href: http://192.168.0.22:18080
+           ping: http://192.168.0.22:18080
            icon: qbittorrent
            widget:
              type: qbittorrent
-             url: http://192.168.0.22:8080
-             username: adm-aw
-             password: Jekomternietin03
-
-
+             url: http://192.168.0.22:18080
 
 - Glances:
    - Glances:
