@@ -3,7 +3,7 @@
 # https://gethomepage.dev/en/configs/services
 
 - Home Network:
-    - Ziggo Connectbox: 
+    - Ziggo Connectbox:
         description: Arris TG2492LG
         href: http://192.168.0.1/
         icon: http://192.168.0.21:8096/storage/icons/router.svg
