@@ -179,7 +179,7 @@
         widget:
           type: uptimekuma
           url: http://192.168.0.21:3001
-          slug: wan
+          slug: docker
           fields: ["up", "down", "uptime", "incident"]
    - Qbittorrent:
            href: http://192.168.0.22:18080
