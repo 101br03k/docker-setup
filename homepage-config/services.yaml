@@ -141,9 +141,9 @@
         href: http://192.168.0.21:2283
         ping: http://192.168.0.21:2283
         icon: immich
-    - Crontab-UI: 
-        href: http://192.168.0.21:8656
-        ping: http://192.168.0.21:5443
+#    - Crontab-UI: 
+#        href: http://192.168.0.21:8656
+#        ping: http://192.168.0.21:5443
 #        icon: cron
 
 - Overig:
