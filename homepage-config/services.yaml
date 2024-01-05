@@ -167,7 +167,7 @@
           type: speedtest
           url: http://192.168.0.21:8080
           fields: ["download", "upload", "ping"]
-   - Uptime Kuma:
+   - Uptime Kuma: Docker:
         href: http://192.168.0.21:3001
         ping: http://192.168.0.21:3001
         icon: uptime-kuma
