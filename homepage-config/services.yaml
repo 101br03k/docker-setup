@@ -168,7 +168,7 @@
           url: http://192.168.0.21:8080
           fields: ["download", "upload", "ping"]
    - Uptime Kuma - Docker Containers:
-        href: http://192.168.0.21:3001
+        href: http://192.168.0.21:3001/status/docker
         ping: http://192.168.0.21:3001
         icon: uptime-kuma
         widget:
