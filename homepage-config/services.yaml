@@ -137,6 +137,10 @@
         href: http://192.168.0.21:181
         ping: https://192.168.0.21:180
         icon: nginx-proxy-manager
+    - Immich: 
+        href: http://192.168.0.21:2283
+        ping: http://192.168.0.21:2283
+        icon: immich
     - Crontab-UI: 
         href: http://192.168.0.21:8656
         ping: http://192.168.0.21:5443
