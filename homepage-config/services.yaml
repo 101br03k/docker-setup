@@ -45,7 +45,7 @@
 #        description: Container Advisor
 #        href: http://192.168.0.21:8888/containers/
 #        ping: http://192.168.0.21:8888/containers/
-#        icon: https://raw.githubusercontent.com/101br03k/docker-setup/main/logo's/cadvisor.png
+#        icon: "https://raw.githubusercontent.com/101br03k/docker-setup/main/logo's/cadvisor.png"
     - Dozzle:
         description: A lightweight, web-based Docker log viewer that provides real-time monitoring and easy troubleshooting.
         href: http://192.168.0.21:9999
@@ -56,7 +56,6 @@
         href: http://192.168.0.21:61208
         ping: http://192.168.0.21:61208
         icon: glances
-
     - Speedtest-tracker:
         description: Speedtest-tracker and database
         href: http://192.168.0.21:8080
@@ -75,12 +74,6 @@
         href: http://192.168.0.21:3001
         ping: http://192.168.0.21:3001
         icon: uptime-kuma
-#        widget:
-#          type: uptimekuma
-#          url: http://192.168.0.21:3001
-#          slug: homepage
-#          fields: ["up", "down", "uptime", "incident"]
-
 
 - Media:
     - Qbittorrent:
@@ -95,20 +88,11 @@
         href: http://192.168.0.22:9696
         ping: http://192.168.0.22:9696
         icon: prowlarr
-#        widget:
-#          type: prowlarr
-#          url: http://192.168.0.22:9696
-#          key: cc9f797b095c41c3980f3830a20df173
     - Sonarr:
         description: Series management
         href: http://192.168.0.22:8989
         ping: http://192.168.0.22:8989
         icon: sonarr
-#        widget:
-#          type: sonarr
-#          fields: ["wanted", "queued"]
-#          url: http://192.168.0.22:8989
-#          key: 998058b2b15843ad9a9e08c48c1c30b4
     - Radarr:
         description: Movie management
         href: http://192.168.0.22:7878
@@ -138,14 +122,21 @@
     - Duplicati Monitoring:
         href: https://www.duplicati-monitoring.com/overview
         icon: duplicati
-        
     - Vscode web editor: 
         href: http://192.168.0.21:5443/?folder=/docker-setup
         ping: http://192.168.0.21:5443
         icon: vscode
+    - OnlyOffice DocumentServer: 
+        href: http://192.168.0.21:62442/example/?userid=uid-1&lang=en&directUrl=false
+        ping: http://192.168.0.21:62442/example/?userid=uid-1&lang=en&directUrl=false
+        icon: onlyoffice
     - TwingateVPN:
-        href: https://twingate.com
+        href: https://adrieit.twingate.com/
         icon: twingate
+    - nginx-proxy-manager:
+        href: http://192.168.0.21:181
+        ping: https://192.168.0.21:180
+        icon: nginx-proxy-manager
     - Crontab-UI: 
         href: http://192.168.0.21:8656
         ping: http://192.168.0.21:5443
