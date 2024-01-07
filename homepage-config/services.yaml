@@ -35,6 +35,10 @@
        href: http://192.168.0.21:3000/wetty/
        ping: http://192.168.0.21:3000/wetty/
        icon: https://apps.heimdall.site/storage/icons/wetty.png
+    - Scrypted: 
+       href: http://192.168.0.21:11080
+       ping: http://192.168.0.21:11080
+       icon: scrypted
 
 - Monitoring:
     - Dozzle:
