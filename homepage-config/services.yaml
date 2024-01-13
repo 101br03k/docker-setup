@@ -121,10 +121,6 @@
         href: http://192.168.0.21:5443/?folder=/docker-setup
         ping: http://192.168.0.21:5443
         icon: vscode
-    - Actual:
-        href: http://192.168.0.21:5006/
-        ping: http://192.168.0.21:5006/
-        icon: actual
     - OnlyOffice DocumentServer: 
         href: http://192.168.0.21:62442/example/?userid=uid-1&lang=en&directUrl=false
         ping: http://192.168.0.21:62442/example/?userid=uid-1&lang=en&directUrl=false
