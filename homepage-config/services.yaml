@@ -145,6 +145,7 @@
     - Spotify Buddylist: 
         href: http://192.168.0.21:10000/
         ping: http://192.168.0.21:10000/
+        icon: spotify
     - Kasmweb/Firefox1:
         description: Firefox container 1
         href: https://192.168.0.21:6901
