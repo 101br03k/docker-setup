@@ -79,7 +79,7 @@
           type: qbittorrent
           url: http://192.168.0.22:18080
     - Prowlarr:
-        description: An indexer manager made integrate with your PVR apps.
+        description: Indexer manager with integrate for PVR apps.
         href: http://192.168.0.22:9696
         ping: http://192.168.0.22:9696
         icon: prowlarr
