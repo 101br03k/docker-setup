@@ -25,7 +25,7 @@ layout:
     Overig: 
       tab: Main
 
-    Graphs: 
+    Stats: 
       tab: Status
 
     Glances:
