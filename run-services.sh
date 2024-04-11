@@ -21,10 +21,8 @@ then
 
   sudo docker run hello-world
 
-  cd /usr/bin/
-  dockerd-rootless-setuptool.sh install
-  
   echo "docker should be installed now."
+  echo "for rootless docker please add user to docker group"
 fi
 
 if [ "$service" = "portainer" ]
