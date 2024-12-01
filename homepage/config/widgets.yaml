@@ -1,0 +1,17 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/widgets
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+
+- datetime:
+    locale: nl
+    format:
+        dateStyle: short
+        timeStyle: short
+- search:
+    provider: google
+    target: _blank

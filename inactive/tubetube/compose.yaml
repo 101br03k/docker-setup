@@ -1,0 +1,19 @@
+services:
+  tubetube:
+    image: ghcr.io/mattblackonly/tubetube:latest
+    container_name: tubetube
+    ports:
+      - 6543:6543
+    volumes:
+      - ./general:/data/General
+      - ./music:/data/Music
+      - ./podcasts:/data/Podcast
+      - ./videos:/data/Video
+      - ./config:/config
+    environment:
+      - THREAD_COUNT=1
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped
+    network_mode: bridge
+networks: {}

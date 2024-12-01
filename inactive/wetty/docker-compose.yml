@@ -2,7 +2,7 @@ services:
   wetty:
     container_name: wetty
     command:
-    - --ssh-host=192.168.0.20
+    - --ssh-host=IPADRES
     image: wettyoss/wetty
     ports:
     - 3000:3000
