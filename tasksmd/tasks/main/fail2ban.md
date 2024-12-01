@@ -1,0 +1,1 @@
+https://github.com/crazy-max/docker-fail2ban

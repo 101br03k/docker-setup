@@ -1,0 +1,16 @@
+services:
+  nginx:
+    image: ghcr.io/linuxserver/nginx:latest
+    container_name: nginx
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./config:/config
+      - ./html:/config/www
+    ports:
+      - 5200:80
+    restart: unless-stopped
+    network_mode: bridge
+networks: {}

@@ -1,0 +1,18 @@
+services:
+  homebox:
+    image: ghcr.io/sysadminsmedia/homebox:latest
+    container_name: homebox
+    restart: unless-stopped
+    environment:
+      - HBOX_LOG_LEVEL=info
+      - HBOX_LOG_FORMAT=text
+      - HBOX_WEB_MAX_UPLOAD_SIZE=10
+    volumes:
+      - homebox-data1:/data/
+    ports:
+      - 3100:7745
+    network_mode: bridge
+volumes:
+  homebox-data1:
+    driver: local
+networks: {}

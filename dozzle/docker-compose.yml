@@ -1,21 +1,23 @@
-version: "3"
 services:
   dozzle:
     image: amir20/dozzle:latest
     container_name: dozzle
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./data/:/data
     ports:
       - 9999:8080
     healthcheck:
-      test: ["CMD", "/dozzle", "healthcheck"]
+      test:
+        - CMD
+        - /dozzle
+        - healthcheck
       interval: 10s
       timeout: 30s
       retries: 5
       start_period: 30s
     environment:
-      DOZZLE_USERNAME: admin
-      DOZZLE_PASSWORD: admin
-      DOZZLE_NO_ANALYTICS: "true"
-    restart: unless-stopped
+      DOZZLE_AUTH_PROVIDER: simple
     network_mode: bridge
+    restart: unless-stopped
+networks: {}

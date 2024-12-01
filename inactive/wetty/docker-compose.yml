@@ -1,0 +1,11 @@
+services:
+  wetty:
+    container_name: wetty
+    command:
+    - --ssh-host=IPADRES
+    image: wettyoss/wetty
+    ports:
+    - 3000:3000
+    restart: unless-stopped
+    network_mode: bridge
+version: '3'
