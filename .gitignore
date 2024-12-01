@@ -1,0 +1,26 @@
+.env
+
+changedetection/config
+code-server/.*
+code-server/*/
+docuseal/*/
+dozzle/data
+duckdns/*/
+duplicati/config
+feedcord/appsettings.json
+firefox/*/
+homebox/*.tar
+nginx-up-page/config/*/
+nginx-up-page/config/
+pi-hole/*/
+scrutiny/*/
+speedtest-tracker/*/
+spotify-buddylist/*.db
+unifi-network-application/*/
+uptime-kuma/*/
+wallos/*/
+watch-your-lan/*/
+yamtrack/*/
+
+#inactive folder -------
+/inactive/otterwiki/*/
