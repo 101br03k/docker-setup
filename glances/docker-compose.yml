@@ -1,0 +1,14 @@
+services:
+  glances:
+    restart: unless-stopped
+    ports:
+      - 61208-61209:61208-61209
+    environment:
+      - GLANCES_OPT=-w
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    pid: host
+    image: docker.io/nicolargo/glances
+    container_name: glances
+    network_mode: bridge
+networks: {}

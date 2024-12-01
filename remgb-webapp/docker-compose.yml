@@ -1,0 +1,9 @@
+services:
+  rembg:
+    image: ghcr.io/101br03k/rembg-webapp:v1.1.1
+    restart: unless-stopped
+    ports:
+      - 5100:5100
+    container_name: rembg-webapp
+    network_mode: bridge
+networks: {}

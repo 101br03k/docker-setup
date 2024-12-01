@@ -1,0 +1,15 @@
+services:
+  tasks.md:
+    image: baldissaramatheus/tasks.md
+    container_name: tasksmd
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./tasks:/tasks
+      - ./config:/config
+    restart: unless-stopped
+    ports:
+      - 46882:8080
+    network_mode: bridge
+networks: {}

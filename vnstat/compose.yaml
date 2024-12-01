@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  vnstat:
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - HTTP_PORT=8685
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    container_name: vnstat
+    image: ghcr.io/vergoh/vnstat

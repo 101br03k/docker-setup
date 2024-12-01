@@ -1,0 +1,23 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/bookmarks
+
+- Developer:
+    - Github:
+        - abbr: GH
+          href: https://github.com/101br03k
+
+- Social:
+    - Reddit r/Selfhosted:
+        - abbr: RE
+          href: https://www.reddit.com/r/selfhosted
+
+- Docker Hub:
+    - Docker Hub:
+        - abbr: DH
+          href: https://hub.docker.com
+
+- Homepage:
+    - Homepage.dev:
+        - abbr: HP
+          href: https://gethomepage.dev/

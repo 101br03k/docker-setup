@@ -1,0 +1,37 @@
+services:
+  influxdb:
+    container_name: influxdb
+    image: influxdb:2.1-alpine
+    ports:
+      - 8086:8086
+    volumes:
+      - ${DIR_CONFIG}/influxdb2/db:/var/lib/influxdb2
+      - ${DIR_CONFIG}/influxdb2/config:/etc/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${USERNAME}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=homelab
+      - DOCKER_INFLUXDB_INIT_BUCKET=scrutiny
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=your-very-secret-token
+    restart: unless-stopped
+    network_mode: bridge
+  scrutiny:
+    container_name: scrutiny
+    image: ghcr.io/analogj/scrutiny:master-web
+    ports:
+      - 8080:8080
+    volumes:
+      - ${DIR_CONFIG}/scrutiny/config:/opt/scrutiny/config
+    environment:
+      - SCRUTINY_WEB_INFLUXDB_HOST=influxdb
+      - SCRUTINY_WEB_INFLUXDB_PORT=8086
+      - SCRUTINY_WEB_INFLUXDB_TOKEN=${PASSWORD}
+      - SCRUTINY_WEB_INFLUXDB_ORG=homelab
+      - SCRUTINY_WEB_INFLUXDB_BUCKET=scrutiny
+      - SCRUTINY_NOTIFY_URLS=["http://gotify:80/message?token=a-gotify-token"]
+    depends_on:
+      - influxdb
+    restart: unless-stopped
+    network_mode: bridge
+networks: {}

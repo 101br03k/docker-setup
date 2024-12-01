@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  scratch-map:
+    restart: always
+    container_name: scratch-map
+    ports:
+      - 13453:8080
+    environment:
+      - PORT=8080
+      - DATA_DIR=./data
+    volumes:
+      - ./opt/docker/scratch-map/data:/data
+    image: ghcr.io/ad3m3r5/scratch-map:latest
+networks: {}
