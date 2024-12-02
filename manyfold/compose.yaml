@@ -38,7 +38,7 @@ services:
       - postgres
       - redis
   postgres:
-    image: postgres:15
+    image: postgres:17
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
