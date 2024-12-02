@@ -13,7 +13,7 @@ services:
       - FORCE_SSL=${HOST}
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/docuseal
   postgres:
-    image: postgres:15
+    image: postgres:17
     container_name: docuseal_postgres
     volumes:
       - ./pg_data:/var/lib/postgresql/data
