@@ -15,7 +15,7 @@ services:
     network_mode: bridge
       
   db:
-    image: mysql:9.3
+    image: mysql:9.4
     restart: always
     environment:
       MYSQL_DATABASE: exampledb
