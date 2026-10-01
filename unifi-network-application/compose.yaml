@@ -30,7 +30,7 @@ services:
       unifi: null
     restart: unless-stopped
   unifi-db:
-    image: docker.io/mongo:8.3
+    image: docker.io/mongo:9.0
     container_name: unifi-db
     volumes:
       - ./db:/data/db
