@@ -2,7 +2,7 @@ networks:
   dawarich: null
 services:
   dawarich_redis:
-    image: redis:8.10-alpine
+    image: redis:8.12-alpine
     command: redis-server
     networks:
       - dawarich
